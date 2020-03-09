@@ -131,6 +131,10 @@ public class MyGdxGame extends ApplicationAdapter {
         if (boss.isDisabled()) {
             enemyList.remove(boss);
         }
+        if (boss.isDisabled() && enemy.isDisabled()){
+            System.out.println("Victory");
+            Gdx.app.exit();
+        }
 
         for (Shot eneshot : enemyShot) {
             if (!eneshot.isDisabled()) {
@@ -147,6 +151,7 @@ public class MyGdxGame extends ApplicationAdapter {
             cyrus.move();
         }
         if (cyrus.isDisabled()== true){
+            System.out.println("Defeat");
             Gdx.app.exit();
         }
         fired.setColor(0f, 0f, 0f, 1.0f);
